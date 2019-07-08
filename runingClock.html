@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            height: 100vh;
+            margin-bottom: 500px;
+            background-color: #000;
+            overflow: hidden;
+            font-family: 'Titillium Web', Calibri, sans-serif;
+        }
+
+        h1.clock-heading {
+            color: #fff;
+            text-align: center;
+            font-weight: 100;
+            font-size: 60px;
+            margin-top: 100px;
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            animation: clockHeadingAnimation 10s ease;
+        }
+
+        .clock-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0 auto;
+            transform: scale(1.4) translate3d(0, 100px, 0);
+            animation: clockAnimation 10s ease;
+        }
+
+        .clock-wrapper .clock-img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+
+        .clock-wrapper .clock-img.hours {
+            transform: rotate(120deg);
+            animation: hoursAnimation 10s ease;
+        }
+
+        .clock-wrapper .clock-img.minutes {
+            transform: rotate(1470deg);
+            animation: minutesAnimation 10s ease;
+        }
+
+        .clock-wrapper .clock-img.seconds {
+            transform: rotate(26610deg);
+            animation: secondAnimation 10s ease;
+        }
+
+        @keyframes hoursAnimation {
+            0% {
+                transform: rotate(0)
+            }
+            100% {
+                transform: rotate(120deg);
+            }
+        }
+
+        @keyframes minutesAnimation {
+            0% {
+                transform: rotate(30deg)
+            }
+            100% {
+                transform: rotate(1470deg);
+            }
+        }
+
+        @keyframes secondAnimation {
+            0% {
+                transform: rotate(210deg);
+            }
+            100% {
+                transform: rotate(26610deg);
+            }
+        }
+
+        @keyframes clockAnimation {
+            0% {
+                transform: scale(1) translate3d(0, 0, 0)
+            }
+            100% {
+                transform: scale(1.4) translate3d(0, 100px, 0)
+            }
+        }
+
+        @keyframes clockHeadingAnimation {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 100px, 0);
+            }
+            90% {
+                opacity: 0;
+                transform: translate3d(0, 100px, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h1 class="clock-heading">It's Time</h1>
+
+    <div class="clock-wrapper">
+        <img src="clock-png.png" alt="" class="clock-img clock">
+        <img src="hours-png.png" alt="" class="clock-img hours">
+        <img src="minutes-png.png" alt="" class="clock-img minutes">
+        <img src="seconds-png.png" alt="" class="clock-img seconds">
+    </div>
+</div>
+
+</body>
+</html>
